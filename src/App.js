@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './Login/LoginComponent.js';
 import Main from './Main/MainComponent.js';
@@ -15,9 +14,9 @@ class App extends Component {
 
     this.user = {};
   }
-  onLoggedIn (isLoggedIn, user) {
+  onLoggedIn ({isLoggedIn, user}) {
     this.setState({ isLoggedIn });
-    this.user = user;
+    this.user = user || {};
   }
   render() {
     let {isLoggedIn} = this.state;

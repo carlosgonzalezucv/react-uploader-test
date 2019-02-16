@@ -1,7 +1,6 @@
 import React from 'react';
 import md5 from 'md5-hash';
 import './Login.css';
-import Main from '../Main/MainComponent.js';
 
 class Login extends React.Component {
 
@@ -19,10 +18,12 @@ class Login extends React.Component {
     //   .then(response => {
     //     console.log("La respuesta del servicio", response);
     //   })
-    this.props.onUpdateStatus(true, {
-      name: "Carlos",
-      id: 1
-    });
+    let isLoggedIn = true,
+      user = {
+        name: "Carlos",
+        id: 1
+      };
+    this.props.onUpdateStatus({isLoggedIn, user});
   }
 
   render () {
